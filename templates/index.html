@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Write</title>
+</head>
+<body>
+<form method="post" action="{% url 'validate' %}">
+    {% csrf_token %}
+<table align="center">
+    <tr>
+        <th>
+            <input type="text" size="20" name="un" placeholder="Username">
+        </th>
+    </tr>
+    <tr>
+        <th>
+        <input type="password" size="15" name="pass" placeholder="Password">
+        </th>
+    </tr>
+            {% if messages %}
+                <tr>
+                <th>
+                    {% for x in messages %}
+
+                    {{ x }}
+
+                    {% endfor %}
+                </th>
+                </tr>
+            {% endif %}
+    <tr><th>
+        <input type="submit" value="Login"><a href="{% url 'create' %}"><input type="button" value="SignUp"></a>
+    </th>
+    </tr>
+</table>
+</form>
+</body>
+</html>

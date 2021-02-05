@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News View</title>
+</head>
+<body>
+<table align="center">
+{% for x in data %}
+         <tr>
+         <th>
+             {{ x.title }}
+         </th>
+             <tr>
+            <th>
+                <img src="{{ x.photo.url }}" width="80" height="80">
+            </th>
+             </tr>
+    <tr>
+            <th >{{ x.content }}</th>
+    </tr>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

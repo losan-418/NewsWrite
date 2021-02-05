@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Write</title>
+</head>
+<body>
+<form method="POST" action="{% url 'insertdata' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+<table align="center">
+    <tr>
+        <th>
+            <input type="text" size="20" name="title" placeholder="Title">
+        </th>
+    </tr>
+    <tr>
+        <th>
+        <textarea placeholder="Write your content" name="content" rows="10" cols="20">
+
+        </textarea>
+        </th>
+    </tr>
+    <tr><th>
+        <input type="file" name="img">
+    </th>
+    </tr>
+    <tr><th>
+        <input type="submit" value="Upload Data"><a href="{% url 'index' %}"><input type="button" value="Exit"></a>
+    </th>
+    </tr>
+</table>
+</form>
+</body>
+</html>

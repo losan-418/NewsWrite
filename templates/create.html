@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Write</title>
+</head>
+<body>
+<form method="POST" action="{% url 'newusr' %}">
+    {% csrf_token %}
+<table align="center">
+    <tr>
+        <th>
+            <input type="text" size="20" name="un" placeholder="Username">
+        </th>
+    </tr>
+    <tr><th>
+        <input type="password" size="15" name="pass" placeholder="Password">
+    </th>
+    </tr>
+    <tr><th>
+        <input type="radio" name="type" value="writer">Writer <input type="radio" name="type" value="viewer">Viewer
+    </th>
+    </tr>
+    <tr>
+        <th>
+        <input type="submit" value="Create">
+        </th>
+    </tr>
+</table>
+</form>
+</body>
+</html>
